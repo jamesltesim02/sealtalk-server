@@ -288,6 +288,11 @@ User = sequelize.define('users', {
     allowNull: false,
     defaultValue: 0,
     comment: '时间戳（版本号）'
+  },
+  userRole: {
+    type: Sequelize.INTEGER.UNSIGNED,
+    allowNull: true,
+    defaultValue: 0
   }
 }, {
   classMethods: userClassMethods,

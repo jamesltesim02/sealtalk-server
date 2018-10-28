@@ -250,7 +250,7 @@ router.post('/login', function(req, res, next) {
       region: region,
       phone: phone
     },
-    attributes: ['id', 'passwordHash', 'passwordSalt', 'nickname', 'portraitUri', 'rongCloudToken']
+    attributes: ['id', 'passwordHash', 'passwordSalt', 'nickname', 'portraitUri', 'rongCloudToken', 'userRole']
   }).then(function(user) {
     var errorMessage, passwordHash;
     errorMessage = 'Invalid phone or password.';
@@ -295,19 +295,22 @@ router.post('/login', function(req, res, next) {
         if (req.app.get('env') === 'development') {
           return res.send(new APIResult(200, Utility.encodeResults({
             id: user.id,
-            token: 'fake token'
+            token: 'fake token',
+            userRole: user.userRole
           })));
         }
         return getToken(user.id, user.nickname, user.portraitUri).then(function(token) {
           return res.send(new APIResult(200, Utility.encodeResults({
             id: user.id,
-            token: token
+            token: token,
+            userRole: user.userRole
           })));
         });
       } else {
         return res.send(new APIResult(200, Utility.encodeResults({
           id: user.id,
-          token: user.rongCloudToken
+          token: user.rongCloudToken,
+          userRole: user.userRole
         })));
       }
     }

@@ -33,7 +33,7 @@
     "lru-cache": "^4.0.1",
     "moment": "^2.10.6",
     "mysql": "^2.9.0",
-    "qiniu": "^6.1.8",
+    "qiniu": "^7.2.1",
     "rongcloud-sdk": "1.0.3",
     "semver": "^5.1.0",
     "sequelize": "^3.8.0",
@@ -41,13 +41,13 @@
     "xss": "^0.2.13"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.3",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^0.8.1",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-nodemon": "^0.4.0",
     "istanbul": "^0.4.0",
     "jasmine": "^2.3.2",
-    "supertest": "^1.1.0"
+    "supertest": "^3.3.0"
   }
 }
